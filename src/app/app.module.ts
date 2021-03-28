@@ -9,6 +9,7 @@ import {BladComponent} from './blad/blad.component';
 import {HttpClientModule} from '@angular/common/http';
 import {MinidetalComponent} from './minidetal/minidetal.component';
 import {AddformComponent} from './addform/addform.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {AddformComponent} from './addform/addform.component';
     AddformComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule

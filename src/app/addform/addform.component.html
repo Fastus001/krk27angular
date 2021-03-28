@@ -1,13 +1,17 @@
 <h1>Zapisz się</h1>
 
-<form action="index.html" method="post" name="forma">
+<span (click) = "ustaw()">Ustaw</span>
+{{forma.controls.imie.value}}
+{{forma.controls.nazwisko.value}}
+
+<form [formGroup]="forma" action="index.html" method="post">
   <div>
     <label for="imieid">Imie</label>
-    <input type="text" size="30" value="" placeholder="np. Adam" name="imie" id="imieid" maxlength="40" accesskey="i" tabindex="1">
+    <input formControlName="imie" type="text" size="30" placeholder="np. Adam" name="imie" id="imieid" maxlength="40" accesskey="i" tabindex="1">
   </div>
   <div>
     <label for="nazwiskoid">Nazwisko</label>
-    <input type="text" size="50" value="" placeholder="np. Kowalski" name="nazwisko" id="nazwiskoid" maxlength="50" accesskey="n" tabindex="2">
+    <input formControlName="nazwisko" type="text" size="50" value="" placeholder="np. Kowalski" name="nazwisko" id="nazwiskoid" maxlength="50" accesskey="n" tabindex="2">
   </div>
   <div>
     <fieldset>
