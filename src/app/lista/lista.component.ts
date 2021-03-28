@@ -4,7 +4,8 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   selector: 'app-lista',
   templateUrl: './lista.component.html',
   styleUrls: ['./lista.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  // generuje stylowanie globalnie - nie zalecane
+  encapsulation: ViewEncapsulation.None
 })
 export class ListaComponent implements OnInit {
 
