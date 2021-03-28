@@ -1,13 +1,15 @@
 
-<table>
-  <caption>Detale</caption>
+<table *ngIf="szczepionka">
+  <caption>Detale  {{szczepionka.id}}</caption>
   <tr>
-    <th>Właściwość</th>
-    <th>Opis</th>
+    <th>Nazwa</th>
+    <th>Cena</th>
+    <th>Country</th>
   </tr>
   <tr>
-    <td>właściwość</td>
-    <td>opis</td>
+    <td>{{szczepionka.name}}</td>
+    <td>{{szczepionka.details.price}}</td>
+    <td>{{szczepionka.details.country}}</td>
   </tr>
 </table>
 

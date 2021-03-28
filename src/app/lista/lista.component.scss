@@ -15,20 +15,29 @@ caption {
   border-bottom-width: 0;
   font-weight: 600;
 }
-
-
-tr:nth-child(odd){
+tr:nth-child(odd) {
   background-color: #ff000038;
 }
 
-tr:nth-child(even){
-  background-color: aquamarine;
+tr:nth-child(even) {
+  background-color: #00ff0038;
 }
 
 th {
-  background-color: #0000ff38;
+  background-color: #0000ff55;
 }
+
 tr:hover {
-  background-color: white;
+  background-color: #fff;
 }
+
+
+//th:hover {
+//  background-color: white;
+//}
+
+//tr:nth-child(odd):hover {
+//  background-color: white;
+//}
+
 
