@@ -1,15 +1,17 @@
 <h1>Lista szczepionek</h1>
-<table>
+<table *ngIf="szczepionki">
   <caption>Lista dostępnych szczepionek</caption>
   <tr>
     <th>Id</th>
     <th>Nazwa</th>
     <th>Detale</th>
   </tr>
-  <tr>
-    <td>id</td>
-    <td>nazwa</td>
-    <td><a [routerLink]="['/detale',2]">wiecej</a></td>
+  <tr *ngFor="let vacine of szczepionki">
+    <td>{{vacine.id}}</td>
+    <td>{{vacine.name}}</td>
+    <td><a [routerLink]="['/detale',vacine.id]">wiecej</a></td>
   </tr>
 </table>
 <br>
+
+  <h3 *ngIf="szczepionki">Właśnie ładuję szczepionki...</h3>
