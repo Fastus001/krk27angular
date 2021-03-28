@@ -1,6 +1,6 @@
 
 <table *ngIf="szczepionka">
-  <caption>Detale  {{szczepionka.id}}</caption>
+  <caption>Detale  {{szczepionka.name}}</caption>
   <tr>
     <th>Nazwa</th>
     <th>Cena</th>
@@ -8,7 +8,7 @@
   </tr>
   <tr>
     <td>{{szczepionka.name}}</td>
-    <td>{{szczepionka.details.price}}</td>
+    <td><app-minidetal [cena]="szczepionka.details.price"></app-minidetal></td>
     <td>{{szczepionka.details.country}}</td>
   </tr>
 </table>

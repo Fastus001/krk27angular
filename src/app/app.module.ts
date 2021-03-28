@@ -7,13 +7,17 @@ import {ListaComponent} from './lista/lista.component';
 import {DetaleComponent} from './detale/detale.component';
 import {BladComponent} from './blad/blad.component';
 import {HttpClientModule} from '@angular/common/http';
+import {MinidetalComponent} from './minidetal/minidetal.component';
+import {AddformComponent} from './addform/addform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaComponent,
     DetaleComponent,
-    BladComponent
+    BladComponent,
+    MinidetalComponent,
+    AddformComponent
   ],
   imports: [
     BrowserModule,

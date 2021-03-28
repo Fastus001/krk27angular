@@ -9,9 +9,14 @@
   <tr *ngFor="let vacine of szczepionki">
     <td>{{vacine.id}}</td>
     <td>{{vacine.name}}</td>
-    <td><a [routerLink]="['/detale',vacine.id]">wiecej</a></td>
+    <td><a [routerLink]="['/detale',vacine.id]">wiecej</a>
+    <app-minidetal [cena]="vacine.details.price"></app-minidetal>
+    </td>
   </tr>
 </table>
 <br>
 
   <h3 *ngIf="szczepionki">Właśnie ładuję szczepionki...</h3>
+
+<a [routerLink]="['/list','addform']">Zapisz się</a>
+<router-outlet></router-outlet>
