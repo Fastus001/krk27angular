@@ -6,6 +6,8 @@ const server = http.createServer( (req, res) => {
   // res.setHeader('Content-type', 'text/plain');
   res.setHeader('Content-type', 'application/json');
   res.setHeader('Access-Control-Allow-Origin','*');
+  res.setHeader('Access-Control-Allow-Headers','*');
+  res.setHeader('Access-Control-Allow-Methods','PUT, GET, POST, DELETE');
   let price = ()=>Math.round(Math.random()*300)+10;
   res.end(`
   [

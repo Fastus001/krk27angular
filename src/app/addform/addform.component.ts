@@ -7,12 +7,10 @@ import {FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./addform.component.scss']
 })
 export class AddformComponent implements OnInit {
-  // imie = new FormControl();
 
   forma: FormGroup = new FormGroup({
     imie: new FormControl('Adam'),
     nazwisko: new FormControl('Nowak'),
-
     }
   );
 

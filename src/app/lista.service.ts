@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {environment} from '../environments/environment';
 
 export interface Szczepionka {
   id: number;
@@ -31,6 +32,6 @@ export class ListaService {
 
     httpHeaders.append('Accept','application/json');
 
-    return this.http.get<Szczepionka[]>('http://localhost:3200', {headers: httpHeaders});
+    return this.http.get<Szczepionka[]>(environment.endPointUrl, {headers: httpHeaders});
   }
 }
