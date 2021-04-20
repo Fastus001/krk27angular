@@ -1,5 +1,32 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Pipe} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+
+@Pipe({
+  name: "przelicz"
+})
+export class PrzeliczPipe {
+  transform(val: number ,param1: number){
+    return val * param1;
+  }
+}
+
+export class MyValidator {
+  static konfiguruj(min: number, max: number ){
+    return function(control: FormControl) {
+      let ok = false;
+
+      // TODO implementacja sprawdzenia
+
+      if(!ok){
+        return {
+          coszle: 'liczba jest inna niż oczekiwana'
+        }
+      }else {
+        return null;
+      }
+    }
+  }
+}
 
 @Component({
   selector: 'app-addform',
@@ -9,7 +36,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class AddformComponent implements OnInit {
 
   forma: FormGroup = new FormGroup({
-    imie: new FormControl('', {validators: [Validators.maxLength(5), Validators.required],
+    imie: new FormControl('', {validators: [Validators.maxLength(5), Validators.required, MyValidator.konfiguruj(1,10)],
     updateOn: "blur"}),
     nazwisko: new FormControl('Nowak', Validators.maxLength(15)),
     plec: new FormControl(null, {validators: Validators.required, updateOn: "change"}),

@@ -3,13 +3,20 @@
 <span (click) = "ustaw()">Ustaw</span>
 <pre>
 <!--<;wyświetlana z użyciem spacji i enterów-->
-{{forma.value | json}}
+{{forma.value | json}} --
 </pre>
 
 <form [formGroup]="forma" action="index.html" method="post">
   <div>
     <label for="imieid">Imie</label>
     <input formControlName="imie" type="text" size="30" placeholder="np. Adam" name="imie" id="imieid" maxlength="40" accesskey="i" tabindex="1">
+    <div *ngIf="forma.controls.imie.errors != null">
+      <ul *ngIf="forma.controls.imie.errors.maxlength != null">
+        Wpisałeś {{forma.controls.imie.errors.maxlength.actualLength}} a możesz tylko {{forma.controls.imie.errors.maxlength.requiredLength}}
+      </ul>
+    </div>
+
+<!--    { "maxlength": { "requiredLength": 5, "actualLength": 9 } }-->
   </div>
   <div>
     <label for="nazwiskoid">Nazwisko</label>
