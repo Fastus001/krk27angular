@@ -1,8 +1,10 @@
 <h1>Zapisz się</h1>
 
 <span (click) = "ustaw()">Ustaw</span>
-{{forma.controls.imie.value}}
-{{forma.controls.nazwisko.value}}
+<pre>
+<!--<;wyświetlana z użyciem spacji i enterów-->
+{{forma.value | json}}
+</pre>
 
 <form [formGroup]="forma" action="index.html" method="post">
   <div>
@@ -16,9 +18,9 @@
   <div>
     <fieldset>
       <legend>Płeć:</legend>
-      <input type="radio" id="kobietaid" value="k" name="plec">
+      <input formControlName="plec" type="radio" id="kobietaid" value="k" name="plec">
       <label for="kobietaid">kobieta</label>
-      <input type="radio" id="mezczyznaid" value="m" name="plec">
+      <input formControlName="plec" type="radio" id="mezczyznaid" value="m" name="plec">
       <label for="mezczyznaid">mężczyzna</label>
     </fieldset>
     <div id="plecError" class="noerror">
@@ -26,11 +28,11 @@
     </div>
   </div>
   <div>
-    <fieldset>
+    <fieldset [formGroup]="forma.controls.zyczenia">
       <legend>Życzenia:</legend>
-      <input type="checkbox" id="zostacid" value="z" name="zyczenia">
+      <input formControlName="a" type="checkbox" id="zostacid" value="z">
       <label for="zostacid">chcę zostać 1 godzinę</label>
-      <input type="checkbox" id="potwierdzid" value="p" name="zyczenia">
+      <input formControlName="b" type="checkbox" id="potwierdzid" value="p">
       <label for="potwierdzid">chcę dostać potwierdzenie</label>
     </fieldset>
     <div id="zyczeniaError" class="noerror">
@@ -39,10 +41,10 @@
   </div>
   <div>
     <label for="typid">Typ szczepionki</label>
-    <select id="typid" name="typ">
-      <option disabled selected value> Wybierz </option>
-      <option value="1">Pfizer</option>
-      <option value="2">Novavax</option>
+    <select formControlName="typ" id="typid">
+      <option [ngValue]="null" disabled selected> Wybierz </option>
+      <option [ngValue]="1" >Pfizer</option>
+      <option [ngValue]="2" >Novavax</option>
     </select>
     <div id="typError" class="noerror">
       Musisz wybrac typ
@@ -50,7 +52,7 @@
   </div>
   <div>
     <label for="komentarzid">Komentarz</label><br>
-    <textarea rows="10" cols="40" id="komentarzid" name="komentarze"></textarea>
+    <textarea formControlName="komentarze" rows="10" cols="40" id="komentarzid" ></textarea>
   </div>
   <div>
     <input type="submit" value="Zapisz">
