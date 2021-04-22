@@ -10,11 +10,14 @@
   <div>
     <label for="imieid">Imie</label>
     <input formControlName="imie" type="text" size="30" placeholder="np. Adam" name="imie" id="imieid" maxlength="40" accesskey="i" tabindex="1">
-    <div *ngIf="forma.controls.imie.errors != null">
-      <ul *ngIf="forma.controls.imie.errors.maxlength != null">
+    <ul *ngIf="forma.controls.imie.errors != null">
+      <li *ngIf="forma.controls.imie.errors.maxlength != null">
         Wpisałeś {{forma.controls.imie.errors.maxlength.actualLength}} a możesz tylko {{forma.controls.imie.errors.maxlength.requiredLength}}
-      </ul>
-    </div>
+      </li>
+      <li *ngIf="forma.controls.imie.errors.mabyc != null">
+        Przekroczona wartość
+      </li>
+    </ul>
 
 <!--    { "maxlength": { "requiredLength": 5, "actualLength": 9 } }-->
   </div>
