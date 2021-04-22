@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {MinidetalComponent} from './minidetal/minidetal.component';
 import {AddformComponent, PrzeliczPipe} from './addform/addform.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {UpdateformComponent} from './updateform/updateform.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     BladComponent,
     MinidetalComponent,
     AddformComponent,
-    PrzeliczPipe
+    PrzeliczPipe,
+    UpdateformComponent
   ],
   imports: [
     ReactiveFormsModule,
